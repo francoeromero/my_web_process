@@ -691,9 +691,6 @@
           </div>
         </li>
       </ul>
-      <div class="footer">
-        <p class="copyright">© 2023 Franco E. Romero</p>
-      </div>
       <!-- HOME -->
       <section id="home">
       <main id="textos" class="textos">
@@ -709,6 +706,10 @@
           </button>
       </main>
     </section>
+
+    <div class="footer">
+      <p class="copyright">© 2023 Franco E. Romero</p>
+    </div>
     <div id="particles-js"></div>
     <script src="./particles.min.js"></script>
     <script src="./particlesjs.js"></script>
@@ -898,17 +899,40 @@
 
   // EVENTO AL DARLE CLICK AL MENU
   circulos.forEach(function(elemento, index) {
-  elemento.addEventListener('click', function() {
+    elemento.addEventListener('click', function() {
     elemento.classList.remove('circle');
     elemento.classList.add('active');
 
-  
+    // DISTRIBUIR LAS SECTIONS 
+    // if(elemento.classList.value === 'home active'){
+    //   console.log('aca va ir la section HOME')
+    // }
+      switch(elemento.classList.value) {
+        case 'home active':
+        console.log('aca va ir la section HOME');
+        break;
+        case 'aboutMe active':
+          console.log('aca va ir la section ABOUT');
+        break;
+        case 'projects active':
+          console.log('aca va ir la section PORTAFOLIO');
+        break;
+        case 'skills active':
+          console.log('aca va ir la section SKILLS');
+        break;
+        default:
+          console.log('aca va a ir la section CERTIFICATE')
+        break;
+      }
+    // console.log(elemento.classList.value)
+
+
     // ANIMACION TRANSICION
     setTimeout(function(){
       contentTransicion.style.display = 'flex';
       contentLogoAnimado.style.display = 'flex';
       transicion.style.animation = 'transicion 1.6s ease-in-out';
-      cascoAnimado.style.animation = 'cascoAnimado 2s 1';
+      cascoAnimado.style.animation = 'cascoAnimado 1.7s 1';
       engranajeAnimado.style.animation = 'engranajeAnimado 2s 1';
     },10)
     setTimeout(function(){
