@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      /* CONFIG GLOBAL */
+    *{
+        margin: 0;
+    }
+    #particles-js{
+        background-color: #000000;
+        background-image: linear-gradient(-180deg, #000000 0%, #3b3e42 94%);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+    }
+    /* CURSOR CIRCULO */
+      .cursor {
+      z-index: 999; 
+      position: fixed;
+      background: #2696E8;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 20px #2696E8, 0 0 60px #2696E8, 0 0 100px #2696E8;
+      animation: colors 5s infinite;
+    }
+
+    .cursor:before{
+      content: '';
+      position: absolute;
+      background: #2696E8;
+      width: 50px;
+      height: 50px;
+      opacity: 0.2;
+      transform: translate(-30%, -30%);
+      border-radius: 50%;
+    }
+/* FIN CONFIG GLOBAL */
+/*///////// SECTION HOME ////////// */
+    .texto1,
+    .texto2,
+    .texto3{
+        top: 8rem;
+        left: 4rem;
+        margin: 5rem;
+        position: absolute;
+        font-family: 'Zen Tokyo Zoo', cursive;
+        font-size: 3rem;
+        font-style: italic;
+    }
+
+    .texto1{
+        color: rgb(173, 173, 173);
+        z-index: 4;
+    }
+    .texto2{
+        color: rgb(25, 199, 202);
+        opacity: 0.5;
+        z-index: 3; 
+        /* animation: animacion2 0.8s 3;  */
+        animation: animacion4 6s infinite linear; 
+
+    }
+    .texto3{
+        color: rgb(211, 25, 183);
+        opacity: 0.5;
+        animation: animacion1 1s 3;
+        animation: animacion3 6s infinite linear;
+        z-index: 2;
+    }
+    .texto4{
+        position: absolute;
+        color: white;
+        top: 17rem;
+        left: 8.8rem;
+        font-size: 2rem;
+        /* font-family: 'Zen Tokyo Zoo', cursive; */
+        font-family: 'Turret Road', cursive;
+        font-weight: bold;
+        /* transform: skew(-20deg); */
+        /* Joyride Round */
+        text-shadow: 0.5px 0.5px 0.5px white;
+    }
+    .texto4:hover{
+      transition: 0.7s;
+    }
+
+    .texto5{
+      position: absolute;
+      color: #eaeaea;
+      top: 20rem;
+      left: 8.9rem;
+      font-size: 2rem;
+      font-weight: 100;
+      font-family: 'Turret Road', cursive;
+
+    }
+
+    .boton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 25rem;
+        left: 8.8rem;
+        width: 10rem;
+        height: 2.5rem;
+        transform: skew(-20deg);
+        border-radius: 1rem;
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        cursor: pointer;
+        background: none;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        border: 2px solid white;
+        overflow: hidden;
+        animation: botonBorde 2s infinite linear;
+    }
+    @keyframes botonBorde {
+      0%, 100%{
+        /* background: transparent; */
+        box-shadow: none;
+        /* border: 2px solid white; */
+      }
+      50%{
+        /* border: 2px solid black; */
+        background: #1d496b;
+        box-shadow: 0 0 20px rgba(38, 150, 232, 0.2),
+        0 0 60px rgba(38, 150, 232, 0.2),
+        0 0 100px rgba(38, 150, 232, 0.2);
+        /* opacity: 0.2; */
+      }
+    }
+    .boton::before{
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #284960;
+      background-image: linear-gradient(150deg, #7e2d7d 0%, #313131 98%);
+      left: -10rem;
+      top: -1rem;
+      width: 10rem;
+      /* animation: botonProyectos 1s ease; */
+    }
+    .boton:hover::before{
+      transform: translateX(100%);
+      transition: 1s;
+    }
+    /* TEXTO CV dentro de BOTON*/
+      .cv{
+      color: white;
+      font-size: 1.2rem;
+      font-family: sans-serif;
+      transform: skewX(-5deg);
+      z-index: 9;
+      font-family:  'Courier New', Courier, monospace;
+      font-weight: bold;
+    }
+
+
+ 
+
+    /* /////  LOGO /////// */
+    .logo{
+      top: 0.4rem;
+      left: 0.4rem;
+      /* cursor: pointer; */
+      animation: girarRapido 10s infinite linear;
+
+    }
+
+    .content-transicion{
+      display: none;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-end;
+      height: 100vh;
+      position: absolute;
+    }
+    .transicion{
+      background-color: #090909;
+      background-image: linear-gradient(-300deg, #172d54 0%, #5e1b5e 94%);
+      border-top: 5rem solid rgba(38, 150, 232, 0.1);
+      border-right: 5rem solid rgba(223, 44, 217, 0.1);
+      border-radius: 50% 50% 50% 50% / 40% 40% 50% 80%;
+      transform: skew(10deg, 30deg), rotate(-350deg);
+      z-index: 9;
+      /* animation: transicion 2s ease-in-out; */
+    }
+
+    @keyframes transicion{
+      0%,100%{
+        width: 1rem;
+        height: 1rem;
+        margin: -100px;
+      }
+      50%{
+        width: 200vw;
+        height: 200vh;
+        margin: -300px;
+      }
+    }
+
+    @keyframes prueba{
+      0%,100% {
+        transform: translate(0, 0); /* Inicio en la posición inicial (0, 0) */
+      }
+      50% {
+        transform: translate(32rem, 15rem); /* Final en la posición diagonal (20rem, 20rem) */
+      }
+    }
+   
+    #engranaje{
+      position: fixed;
+      width: 6rem;
+      /* animation: engranaje 6s infinite linear; */
+      transform: rotate(360);
+      z-index: 5;
+      opacity: 0.9;
+    }
+    #casco{
+      position: fixed;
+      width: 6rem;
+      z-index: 6;
+    }
+
+    /* CONTENEDOR DE LOS CIRCULOS DEL MENU */
+    .menu{
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .active{
+      position: absolute;
+      z-index: 9;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: #eaeaea;
+      border: 3px solid #c1c1c1;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 9;
+    }
+    .active i{
+      color: #0b0b0b;
+    }
+    
+    .circle{
+      position: absolute;
+      z-index: 9;
+      top: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: #0b0b0b;
+      border: 3px solid #c1c1c1;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 9;
+    }
+    .circle::before {
+      content: ""; /* Agregamos contenido vacío al pseudo-elemento */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      border-radius: 50%;
+      z-index: 1; /* Cambiado a -1 para colocar el pseudo-elemento detrás del contenido */
+    }
+    .circle:hover::before{
+      animation: btnDetras 1.2s infinite;
+    }
+    .circle:hover{
+      animation: girarRapido 5s 1;
+    }
+    .home{
+      left: 45rem;
+    }
+    .aboutMe{
+      left: 50rem;
+    }
+    .projects{
+      left: 55rem;
+    }
+    .skills{
+      left: 60rem;
+    }
+    .certificates{
+      left: 65rem;
+    }
+
+    i{
+      color: #c1c1c1;
+      scale: 2;
+      cursor: pointer;
+      z-index: 9;
+    }
+    /* /////// FOOTER //////// */
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .copyright{
+      color: white;
+      position: fixed;
+      font-size: 0.7rem;
+      font-family: sans-serif;
+      bottom: 1rem;
+    }
+    .copyright::after{
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: 10rem;
+      width: 200rem;
+      bottom: 0.5rem;
+      background: white;
+    }
+    .copyright::before{
+      content: '';
+      position: absolute;
+      height: 1px;
+      right: 10rem;
+      width: 200rem;
+      bottom: 0.5rem;
+      background: white;
+    }
+
+       /* ////// ANIMACIONES //////*/
+    @keyframes animacion1 {
+            0%{
+                left: 4rem;
+                
+            }
+            25%{
+                left: 4.2rem;
+            }
+            50%{
+                left: 4rem;
+            }
+            75%{
+                left: 4.4rem;
+            }
+            100%{
+                left: 4rem;
+            }
+        }
+    @keyframes animacion2 {
+            0%{
+                left: 4rem;
+            }
+            25%{
+                left: 3.7rem;
+            }
+            50%{
+                left: 4rem;
+            }
+            75%{
+                left: 3.4rem;
+            }
+            100%{
+                left: 4rem;
+            }
+        }
+    @keyframes animacion3 {
+          0% {
+            left: 4rem;
+        }
+        20% {
+            left: 4.3rem;
+        }
+        40% {
+            left: 4rem;
+        }
+        60% {
+            left: 4.6rem;
+        }
+        80% {
+            left: 4rem;
+        }
+        100% {
+            left: 4.2rem;
+    } 
+        }
+    @keyframes animacion4 {
+            0%{
+              left: 4rem
+            }
+            20%{left: 3.6rem;}
+            40%{left: 4rem}
+            60%{left: 3.4rem;}
+            80%{left: 4rem}
+            100%{left: 4rem}
+        }
+    @keyframes botonProyectos{
+        0%{
+            left: -10rem;
+        }
+
+        100%{
+          left: 0rem;
+        }
+    }
+    @keyframes girarRapido{
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+
+      10%, 90% {
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes engranaje{
+      0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(-360deg);
+        }
+    }
+    
+    @keyframes btnDetras {
+      0%{
+        transform: scale(0.4);
+        opacity: 0.9;
+        background: #0b0b0b;
+      }
+
+      90%,100%{
+        transform: scale(2);
+        opacity: 0;
+        background: #c1c1c1;
+      }
+    }
+    @keyframes btnMenu {
+      0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    }
+    @keyframes colors{
+      0%{
+        filter: hue-rotate(0deg);
+      }
+      100%{
+        filter: hue-rotate(360deg);
+      }
+    }
+    @keyframes teclear {
+      from{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      }
+      to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+    @keyframes teclear-reverse {
+      from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      to {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      }
+    } 
+
+
+    /* RESPONSIVO */
+    @media (max-width: 1000px){
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 2.5rem;
+      }
+      .texto4{
+        font-size: 1.5rem;
+        top: 16rem;
+      }
+      .texto5{
+        font-size: 1.2rem;
+        top: 18rem;
+      }
+      .boton{
+        top: 20rem;
+      }
+      .home,
+      .aboutMe,
+      .projects,
+      .skills,
+      .certificates{
+        transition: 1s;
+        left: 1.5rem;
+      }
+      .home{
+      top: 10rem;
+      }
+      .aboutMe{
+        top: 15rem;
+      }
+      .projects{
+        top: 20rem;
+      }
+      .skills{
+        top: 25rem;
+      }
+      .certificates{
+        top: 30rem;
+      }
+    }
+    @media (max-width: 800px){
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 1.8rem;
+      }
+      .texto4{
+        font-size: 1.2rem;
+        top: 15rem;
+      }
+      .texto5{
+        font-size: 1.2rem;
+        top: 17rem;
+      }
+    }
+
+    @media (max-width: 600px){
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 2rem;
+      }
+
+      .texto4{
+        font-size: 1.2rem;
+        top: 20rem;
+      }
+      .texto5{
+        font-size: 1.2rem;
+        top: 23rem;
+      }
+      .boton{
+        top: 28rem;
+      }
+    }
+
+
+
+
+    .content-logoAnimado{
+      display: none;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: absolute;
+    }
+    .cascoAnimado,
+    .engranajeAnimado{
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+    }
+    .cascoAnimado{
+      animation: cascoAnimado 2s 1;
+      z-index: 11;
+    }
+    .engranajeAnimado{
+      animation: engranajeAnimado 2s 1;
+      z-index: 10;
+    }
+    @keyframes cascoAnimado {
+      0%{
+        bottom: 16.2rem;
+        transform: rotate(360deg);
+      }
+      50%{
+        bottom: 20rem;
+        transform: rotate(-360deg);
+      }
+      100%{
+        bottom: 16.2rem;
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes engranajeAnimado{
+      0%{
+        transform: rotate(360deg);
+        bottom: 16.2rem;
+      }
+      10%{
+        transform: rotate(-360deg);
+        bottom: 17rem;
+      }
+      20%{
+        transform: rotate(360deg);
+      }
+      50%{
+        transform: rotate(-360deg);
+        bottom: 16.2rem;
+      }
+      100%{
+        transform: rotate(-300deg);
+        bottom: 16.2rem;
+      }
+    }
+
+    </style>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="content-logoAnimado">
+    <!-- <div class="logoAnimado"></div> -->
+    <img class="cascoAnimado" src="./img/casco.png" alt="">
+    <img class="engranajeAnimado" src="./img/engranaje.png" alt="">
+  </div>
+    <div class="content-transicion">
+    <div class="transicion"></div>
+  </div>
+  <ul class="menu">
+    <li class="content-logo">
+      <img class="logo" id="casco" src="./img/casco.png" alt="">
+      <img class="logo" id="engranaje" src="./img/engranaje.png" alt="">
+    </li>
+        <li>
+          <div class="home circle">
+            <i class="bi bi-house-door"></i>
+          </div>
+        </li>
+        <li>
+          <div class="aboutMe circle">
+            <i class="bi bi-person-vcard"></i>
+          </div>
+        </li>
+        <li>
+          <div class="projects circle">
+            <i class="bi bi-folder"></i>
+          </div>
+        </li>
+        <li>
+          <div class="skills circle">
+            <i class="bi bi-gear"></i>
+          </div>
+        </li>
+        <li>
+          <div class="certificates circle">
+            <i class="bi bi-mortarboard"></i>
+          </div>
+        </li>
+      </ul>
+      <div class="footer">
+        <p class="copyright">© 2023 Franco E. Romero</p>
+      </div>
+      <!-- HOME -->
+      <section id="home">
+      <main id="textos" class="textos">
+          
+          <h2 class="texto1">FRANCO EZEQUIEL ROMERO</h2>
+          <h2 class="texto2">FRANCO EZEQUIEL ROMERO</h2>
+          <h2 class="texto3">FRANCO EZEQUIEL ROMERO</h2>
+          <h3 class="texto4"><i>Software developer | Architect</i></h3>
+          <p class="texto5">I will turn your ideas into projects</p>
+          <div class="parpadeo"></div>
+          <button class="boton">
+            <p class="cv">Download CV</p>
+          </button>
+      </main>
+    </section>
+    <div id="particles-js"></div>
+    <script src="./particles.min.js"></script>
+    <script src="./particlesjs.js"></script>
+    <script>
+      // ELEMENTOS DOM
+        const HOME = document.getElementById('home');
+        const texto1 = document.querySelector('.texto1');
+        const texto2 = document.querySelector('.texto2');
+        const texto3 = document.querySelector('.texto3');
+        const texto4 = document.querySelector('.texto4');
+        const texto5 = document.querySelector('.texto5');
+        const texto5_parpadeo = document.querySelector('.parpadeo');
+        const boton = document.querySelector('.boton');
+        const circulos = document.querySelectorAll('.circle');
+        const activo = document.querySelector('.active');
+        const iconos = document.querySelectorAll('i');
+        const cursor = document.querySelector('.cursor');
+        const logo = document.querySelectorAll('.logo');
+        const engranaje = document.getElementById('engranaje');
+        const casco = document.getElementById('casco');
+        const transicion = document.querySelector('.transicion')
+        const contentTransicion = document.querySelector('.content-transicion') 
+        const contentLogoAnimado = document.querySelector('.content-logoAnimado');
+        const cascoAnimado = document.querySelector('.cascoAnimado');
+        const engranajeAnimado = document.querySelector('.engranajeAnimado');
+        
+
+
+
+      // HOME.style.display = 'none';
+      // AL CARGARSE ANIMACION ESCRITURA
+      document.addEventListener('DOMContentLoaded', function(){
+        let agregarBorde = true;
+        setInterval(function(){
+          if(agregarBorde){
+            texto5.style.borderRight = '0.5rem solid white';
+          }
+          else{
+            texto5.style.borderRight = 'none';
+          }
+          agregarBorde = !agregarBorde;
+        },500)
+        setTimeout(function(){
+                texto5.style.animation = 'teclear 3s steps(16)';
+              }, 10)
+
+        setTimeout(function(){        
+                texto5_parpadeo.style.display = 'block';  
+        }, 3000)
+        
+        setTimeout(function(){
+              texto5_parpadeo.style.display = 'none';  
+              texto5.style.animation = 'teclear-reverse 3s 1';
+        }, 6000)
+
+        setTimeout(function(){
+          texto5_parpadeo.style.left = '40rem';  
+          texto5.style.animation = 'teclear 3s steps(16)';
+          texto5.innerText = 'I will design your project in your style'
+        }, 9000)
+
+        setTimeout(function(){        
+                texto5_parpadeo.style.display = 'block'; 
+                texto5_parpadeo.style.left = '40.3rem';  
+        }, 12000)
+      })
+      // LOGO CLICK
+      // casco.addEventListener('click', function(){
+      //   casco.style.animation = 'prueba 1s 1'
+      //   engranaje.style.animation = 'prueba 1s 1'
+      // })
+
+
+      // let engranaje = document.getElementById('engranaje');
+      // let casco = document.getElementById('casco');
+      // e.style.animation = 'prueba 1s';
+
+
+    //   logo.addEventListener('click', function(){
+    //     const engranaje = document.getElementById('engranaje');
+    //     const logo = document.querySelector('.content-logo')
+
+
+    // contentLogo.style.animation = 'prueba 1s infinite';
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 0.5s infinite linear'
+    //     // },10)
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 0.1s infinite linear'
+    //     // },100)
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 1s infinite linear'
+    //     // },1000)
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 1.1s infinite linear'
+    //     // },1100)
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 1.2s infinite linear'
+    //     // },1200)
+    //     // setTimeout(function(){
+    //     //   engranaje.style.animation = 'engranaje 2s infinite linear'
+    //     // },5000)
+
+    //   })
+
+
+
+
+      // BOTON CV AL PASAR MOUSE
+      boton.onmouseover = () => {
+        let letra = document.querySelector('.cv');
+        setTimeout(function(){
+          letra.style.color = '#0b0b0b';
+          letra.style.transition = '1s'
+        },100)
+        setTimeout(function(){
+          letra.style.color = 'white';
+        // letra.style.transition = '1s'
+        },2000)
+      }
+      // BOTON CV AL DARLE CLICK
+      boton.addEventListener('click', function(){
+        let letra = document.querySelector('.cv');
+        setTimeout(function(){
+          letra.innerText = 'Loading..'
+          letra.style.transition = '1s';
+        }, 10);
+        setTimeout(function(){
+          letra.innerText = 'Done!';
+          letra.style.transition = '1s';
+        },2000);
+        setTimeout(function(){
+          letra.innerText = 'Download CV';
+          letra.style.transition = '1s';
+          letra.style.color = 'white'
+        },3000)
+      })
+
+
+      // CURSOR MOUSE
+      document.addEventListener('mousemove', (e) => {
+          let x = e.pageX;
+          let y = e.pageY;
+
+          cursor.style.top = y + 'px';
+          cursor.style.left = x + 'px';
+      })
+
+      // MI NOMBRE EFECTO 
+        texto1.onmouseover = () => {
+          setTimeout(function(){
+                texto2.style.animation = 'none';
+                texto3.style.animation = 'none';
+            }, 10)
+            setTimeout(function(){
+                texto2.style.animation = 'animacion2 2s 3';
+                texto3.style.animation = 'animacion1 2s 3';
+                texto1.style.fontStyle = 'italic'
+                texto2.style.fontStyle = 'italic'
+                texto3.style.fontStyle = 'italic'
+            }, 100)
+            setTimeout(function(){
+                texto2.style.animation = 'none';
+                texto3.style.animation = 'none';
+            }, 2000)
+        }
+
+  // EVENTO AL PASAR EL MOUSE POR EL MENU 
+  circulos.forEach((circle) => {
+  circle.addEventListener('mouseover', () => {
+    const icon = circle.querySelector('i');
+    const currentClass = icon.className; // Obtenemos las clases existentes del elemento i
+    const newClass = currentClass + '-fill'; // Agregamos el sufijo '-fill'
+    icon.className = newClass; // Asignamos la nueva clase al elemento i
+    circle.style.transition = '1s';
+  });
+  
+  circle.addEventListener('mouseout', () => {
+    const icon = circle.querySelector('i');
+    const currentClass = icon.className;
+    const newClass = currentClass.replace('-fill', ''); // Quitamos el sufijo '-fill'
+    icon.className = newClass;
+    icon.style.transition = '1s'
+  });
+});
+
+
+  // EVENTO AL DARLE CLICK AL MENU
+  circulos.forEach(function(elemento, index) {
+  elemento.addEventListener('click', function() {
+    elemento.classList.remove('circle');
+    elemento.classList.add('active');
+
+  
+    // ANIMACION TRANSICION
+    setTimeout(function(){
+      contentTransicion.style.display = 'flex';
+      contentLogoAnimado.style.display = 'flex';
+      transicion.style.animation = 'transicion 1.6s ease-in-out';
+      cascoAnimado.style.animation = 'cascoAnimado 2s 1';
+      engranajeAnimado.style.animation = 'engranajeAnimado 2s 1';
+    },10)
+    setTimeout(function(){
+      transicion.style.animation = 'none';
+      contentTransicion.style.display = 'none';
+      contentLogoAnimado.style.display = 'none';
+      cascoAnimado.style.animation = 'none';
+      engranajeAnimado.style.animation = 'none';
+      engranaje.style.animation = 'engranaje 6s infinite linear';
+
+    },1600)
+
+
+
+    setTimeout(function(){
+      elemento.style.animation = 'girarRapido 5s 1';
+    },10)
+    setTimeout(function(){
+      elemento.style.animation = 'none';
+    },1000)
+
+    
+    // Recorre los demás elementos para eliminar la clase 'active'.
+    circulos.forEach(function(otroElemento, otroIndex) {
+      if (otroIndex !== index) {
+        otroElemento.classList.remove('active');
+        otroElemento.classList.add('circle');
+
+
+
+      }
+    });
+  });
+
+  // Simular clic en el primer elemento
+  if (index === 0) {
+    elemento.click();
+  }
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
