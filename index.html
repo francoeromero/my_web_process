@@ -609,17 +609,38 @@
     }
     .cascoAnimado,
     .engranajeAnimado{
-      width: 12em;
+      width: 12rem;
       height: 12rem;
       position: absolute;
     }
+    .fondoAnimado{
+      width: 18rem;
+      height: 12rem;
+      position: absolute;
+      animation: fondoAnimado 2s 1;
+      z-index: 10;
+    }
+    @keyframes fondoAnimado{
+      0%{
+        bottom: 10rem;
+        opacity: 0;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        opacity: 0;
+        bottom: 15rem;
+      }
+    }
+
     .cascoAnimado{
       animation: cascoAnimado 2s 1;
-      z-index: 11;
+      z-index: 12;
     }
     .engranajeAnimado{
       animation: engranajeAnimado 2s 1;
-      z-index: 10;
+      z-index: 11;
     }
     @keyframes cascoAnimado {
       0%{
@@ -663,6 +684,7 @@
   <div class="cursor"></div>
   <div class="content-logoAnimado">
     <!-- <div class="logoAnimado"></div> -->
+    <img class="fondoAnimado" src="./img/background.png"alt="">
     <img class="cascoAnimado" src="./img/casco.png" alt="">
     <img class="engranajeAnimado" src="./img/engranaje.png" alt="">
   </div>
