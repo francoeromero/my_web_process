@@ -677,6 +677,78 @@
         bottom: 16.2rem;
       }
     }
+    /* /////// SECTION ABOUT ME //////// */
+    .section-about h1{
+      left: 30rem;
+    }
+
+    .textoAbout{
+      top: 12rem;
+      left: 30rem;
+      margin: 5rem;
+      color: #c1c1c1;
+      position: absolute;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      width: 50rem;
+    }
+    .forma{
+      width: 17rem;
+      height: 17rem;
+      background: white;
+      position: absolute;
+      border-radius: 50%;
+      top: 12rem;
+      left: 15rem;
+      animation: foto 6s infinite linear;
+    }
+    .foto{
+      width: 15rem;
+      height: 15rem;
+      top: 12rem;
+      left: 15rem;
+      position: absolute;
+      border-radius: 50%;
+    }
+    @keyframes foto {
+
+      0% {
+                border-radius: 20% 40% 60% 20%;
+                transform: skew(0deg, 0deg);
+            }
+            25% {
+                border-radius: 70% 10% 30% 50%;
+                transform: skew(10deg, 20deg);
+            }
+            50% {
+                border-radius: 30% 50% 20% 40%;
+                transform: skew(-20deg, 5deg);
+            }
+            75% {
+                border-radius: 50% 20% 70% 10%;
+                transform: skew(15deg, -10deg);
+            }
+            100% {
+                border-radius: 20% 40% 60% 20%;
+                transform: skew(0deg, 0deg);
+            }
+
+
+      /* 0%, 100%{ */
+        /* background: transparent; */
+        /* box-shadow: none; */
+        /* border: 2px solid white; */
+      /* } */
+      /* 50%{ */
+        /* border: 2px solid black; */
+        /* background: #1d496b; */
+        /* box-shadow: 0 0 20px rgba(38, 150, 232, 0.2),
+        0 0 60px rgba(38, 150, 232, 0.2),
+        0 0 100px rgba(38, 150, 232, 0.2); */
+        /* opacity: 0.2; */
+      /* } */
+    }
 
     </style>
 </head>
@@ -739,7 +811,10 @@
     </section>
 
     <section class="section-about" id="about">
-      <h1 class="texto1">SECTION ABOUT</h1>
+      <h1 class="texto1">SOBRE MI</h1>
+      <p class="textoAbout">Arquitecto orientado en tecnología con 4 años de experiencia en diversos proyectos enfocados en la planificación y proyección de diseños funcionales, estructurales y eficientes en la resolución de problemas. Busco constantemente nuevos desafíos para seguir creciendo profesionalmente.</p>
+      <div class="forma"></div>
+      <img class="foto" src="./img/000000000.jpg" alt="">
     </section>
     <section class="section-projects" id="projects">
       <h1 class="texto1">SECTION PROJECTS</h1>
