@@ -23,6 +23,15 @@
         top: 0;
         z-index: -1;
     }
+
+    /* .section-home,
+    .section-about,
+    .section-projects,
+    .section-skills,
+    .section-certificates{
+      transition: 1s;
+    } */
+
     /* CURSOR CIRCULO */
       .cursor {
       z-index: 999; 
@@ -692,7 +701,7 @@
         </li>
       </ul>
       <!-- HOME -->
-      <section id="home">
+      <section class="section-home" id="home">
       <main id="textos" class="textos">
           
           <h2 class="texto1">FRANCO EZEQUIEL ROMERO</h2>
@@ -707,6 +716,19 @@
       </main>
     </section>
 
+    <section class="section-about" id="about">
+      <h1 class="texto1">SECTION ABOUT</h1>
+    </section>
+    <section class="section-projects" id="projects">
+      <h1 class="texto1">SECTION PROJECTS</h1>
+    </section>
+    <section class="section-skills" id="skills">
+      <h1 class="texto1">SECTION SKILLS</h1>
+    </section>
+    <section class="section-certificates" id="certificates">
+      <h1 class="texto1">SECTION CERTIFICATES</h1>
+    </section>
+
     <div class="footer">
       <p class="copyright">© 2023 Franco E. Romero</p>
     </div>
@@ -715,7 +737,13 @@
     <script src="./particlesjs.js"></script>
     <script>
       // ELEMENTOS DOM
+      // secciones
         const HOME = document.getElementById('home');
+        const ABOUT= document.getElementById('about');
+        const PROJECTS = document.getElementById('projects');
+        const SKILLS = document.getElementById('skills');
+        const CERTIFICATES = document.getElementById('certificates');
+
         const texto1 = document.querySelector('.texto1');
         const texto2 = document.querySelector('.texto2');
         const texto3 = document.querySelector('.texto3');
@@ -739,7 +767,10 @@
 
 
 
-      // HOME.style.display = 'none';
+      ABOUT.style.display = 'none';
+      PROJECTS.style.display = 'none';
+      CERTIFICATES.style.display = 'none';
+      SKILLS.style.display = 'none';
       // AL CARGARSE ANIMACION ESCRITURA
       document.addEventListener('DOMContentLoaded', function(){
         let agregarBorde = true;
@@ -903,29 +934,44 @@
     elemento.classList.remove('circle');
     elemento.classList.add('active');
 
-    // DISTRIBUIR LAS SECTIONS 
-    // if(elemento.classList.value === 'home active'){
-    //   console.log('aca va ir la section HOME')
-    // }
-      switch(elemento.classList.value) {
-        case 'home active':
-        console.log('aca va ir la section HOME');
-        break;
-        case 'aboutMe active':
-          console.log('aca va ir la section ABOUT');
-        break;
-        case 'projects active':
-          console.log('aca va ir la section PORTAFOLIO');
-        break;
-        case 'skills active':
-          console.log('aca va ir la section SKILLS');
-        break;
-        default:
-          console.log('aca va a ir la section CERTIFICATE')
-        break;
-      }
-    // console.log(elemento.classList.value)
-
+    // // DISTRIBUIR LAS SECTIONS 
+    //   switch(elemento.classList.value) {
+    //     case 'home active':
+    //       ABOUT.style.display = 'none';
+    //       HOME.style.display = 'block';
+    //       PROJECTS.style.display = 'none';
+    //       SKILLS.style.display = 'none';
+    //       CERTIFICATES.style.display = 'none';
+    //     break;
+    //     case 'aboutMe active':
+    //       ABOUT.style.display = 'block';
+    //       HOME.style.display = 'none';
+    //       PROJECTS.style.display = 'none';
+    //       SKILLS.style.display = 'none';
+    //       CERTIFICATES.style.display = 'none';
+    //     break;
+    //     case 'projects active':
+    //       ABOUT.style.display = 'none';
+    //       HOME.style.display = 'none';
+    //       PROJECTS.style.display = 'block';
+    //       SKILLS.style.display = 'none';
+    //       CERTIFICATES.style.display = 'none';
+    //     break;
+    //     case 'skills active':
+    //       ABOUT.style.display = 'none';
+    //       HOME.style.display = 'none';
+    //       PROJECTS.style.display = 'none';
+    //       SKILLS.style.display = 'block';
+    //       CERTIFICATES.style.display = 'none';
+    //     break;
+    //     default:
+    //       ABOUT.style.display = 'none';
+    //       HOME.style.display = 'none';
+    //       PROJECTS.style.display = 'none';
+    //       SKILLS.style.display = 'none';
+    //       CERTIFICATES.style.display = 'block';
+    //     break;
+    //   }
 
     // ANIMACION TRANSICION
     setTimeout(function(){
@@ -936,6 +982,46 @@
       engranajeAnimado.style.animation = 'engranajeAnimado 2s 1';
     },10)
     setTimeout(function(){
+          // DISTRIBUIR LAS SECTIONS 
+          switch(elemento.classList.value) {
+        case 'home active':
+          ABOUT.style.display = 'none';
+          HOME.style.display = 'block';
+          PROJECTS.style.display = 'none';
+          SKILLS.style.display = 'none';
+          CERTIFICATES.style.display = 'none';
+        break;
+        case 'aboutMe active':
+          ABOUT.style.display = 'block';
+          HOME.style.display = 'none';
+          PROJECTS.style.display = 'none';
+          SKILLS.style.display = 'none';
+          CERTIFICATES.style.display = 'none';
+        break;
+        case 'projects active':
+          ABOUT.style.display = 'none';
+          HOME.style.display = 'none';
+          PROJECTS.style.display = 'block';
+          SKILLS.style.display = 'none';
+          CERTIFICATES.style.display = 'none';
+        break;
+        case 'skills active':
+          ABOUT.style.display = 'none';
+          HOME.style.display = 'none';
+          PROJECTS.style.display = 'none';
+          SKILLS.style.display = 'block';
+          CERTIFICATES.style.display = 'none';
+        break;
+        default:
+          ABOUT.style.display = 'none';
+          HOME.style.display = 'none';
+          PROJECTS.style.display = 'none';
+          SKILLS.style.display = 'none';
+          CERTIFICATES.style.display = 'block';
+        break;
+      }
+    },1200)
+    setTimeout(function(){
       transicion.style.animation = 'none';
       contentTransicion.style.display = 'none';
       contentLogoAnimado.style.display = 'none';
@@ -944,6 +1030,7 @@
       engranaje.style.animation = 'engranaje 6s infinite linear';
 
     },1600)
+
 
 
 
@@ -960,9 +1047,6 @@
       if (otroIndex !== index) {
         otroElemento.classList.remove('active');
         otroElemento.classList.add('circle');
-
-
-
       }
     });
   });
