@@ -203,10 +203,10 @@
     .transicion{
       background-color: #090909;
       background-image: linear-gradient(-300deg, #172d54 0%, #000000 84%);
-      border-top: 5rem solid rgba(18, 21, 23, 0.1);
-      border-right: 5rem solid rgba(37, 32, 37, 0.1);
-      border-radius: 50% 50% 50% 50% / 40% 40% 50% 80%;
-      transform: skew(10deg, 30deg), rotate(-350deg);
+      /* border-top: 5rem solid rgba(18, 21, 23, 0.1);
+      border-right: 5rem solid rgba(37, 32, 37, 0.1); */
+      border-radius: 90% 90% 90% 90% / 90% 90% 50% 90%;
+      /* transform: skew(10deg, 30deg), rotate(-350deg);  */
       z-index: 9;
       /* animation: transicion 2s ease-in-out; */
     }
@@ -694,9 +694,11 @@
       width: 50rem;
     }
     .forma{
+      display: none;
       width: 17rem;
       height: 17rem;
       background: white;
+      border: 2px solid gray;
       position: absolute;
       border-radius: 50%;
       top: 12rem;
@@ -709,24 +711,26 @@
       width: 17rem;
       height: 17rem;
       background: rgb(107, 26, 97);
+      border: 2px solid white;
       position: absolute;
       border-radius: 50%;
       top: 12rem;
       left: 15rem;
       animation: forma3 15s infinite linear;
-      opacity: 0.2;
+      opacity: 0.1;
       z-index: 7;
     }
     .forma2{
       width: 17rem;
       height: 17rem;
       background: rgb(41, 75, 126);
+      border: 2px solid white;
       position: absolute;
       border-radius: 50%;
       top: 12rem;
       left: 15rem;
       animation: forma2 11s infinite linear;
-      opacity: 0.6;
+      opacity: 0.1;
       z-index: 7;
     }
     .foto{
@@ -806,6 +810,71 @@
             }
     }
 
+
+    /* contacto */
+    .content-contacto{
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      top: 35rem;
+      width: 100%;
+      z-index: 6;
+    }
+    .contacto{
+      width: 5rem;
+      height: 5rem;
+      margin-right: 4rem;
+      cursor: pointer;
+    }
+
+    .content-formas-contacto{
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      top: 35rem;
+      width: 100%;
+      z-index: 5;
+    }
+    .forma-contacto{
+      width: 5rem;
+      height: 5rem;
+      background: white;
+      border-radius: 50%;
+      margin-right: 4rem;
+      border: 2px solid white;
+      animation: forma2 11s infinite linear;
+      opacity: 0.2;
+    }
+    .content-formas-contacto-segundo{
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      top: 35rem;
+      width: 100%;
+      z-index: 5;
+    }
+    .forma-contacto-segundo{
+      width: 5rem;
+      height: 5rem;
+      background: white;
+      border-radius: 50%;
+      margin-right: 4rem;
+      border: 2px solid white;
+      animation: forma1 13s infinite linear;
+      opacity: 0.1;
+    }
+    @keyframes girar{
+      from{
+        transform: rotate(360deg);
+      }
+      to{
+        transform: rotate(-360deg);
+      }
+    }
+
     </style>
 </head>
 <body>
@@ -873,6 +942,25 @@
       <div class="forma2"></div>
       <div class="forma"></div>
       <img class="foto" src="./img/000000000.jpg" alt="">
+      <div class="content-contacto">
+          <img class="contacto linkedin" src="./img/linkedin.png" alt="">
+          <img class="contacto github" src="./img/github.png" alt="">
+          <img class="contacto email" src="./img/email.png" alt="">
+          <img class="contacto phone" src="./img/phone.png" alt="">
+      </div>
+      <div class="content-formas-contacto">
+        <div class="forma-contacto linkedin"></div>
+        <div class="forma-contacto github"></div>
+        <div class="forma-contacto email"></div>
+        <div class="forma-contacto phone"></div>
+      </div>
+      <div class="content-formas-contacto-segundo">
+        <div class="forma-contacto-segundo linkedin"></div>
+        <div class="forma-contacto-segundo github"></div>
+        <div class="forma-contacto-segundo email"></div>
+        <div class="forma-contacto-segundo phone"></div>
+      </div>
+
     </section>
     <section class="section-projects" id="projects">
       <h1 class="texto1">SECTION PROJECTS</h1>
@@ -1089,45 +1177,6 @@
     elemento.classList.remove('circle');
     elemento.classList.add('active');
 
-    // // DISTRIBUIR LAS SECTIONS 
-    //   switch(elemento.classList.value) {
-    //     case 'home active':
-    //       ABOUT.style.display = 'none';
-    //       HOME.style.display = 'block';
-    //       PROJECTS.style.display = 'none';
-    //       SKILLS.style.display = 'none';
-    //       CERTIFICATES.style.display = 'none';
-    //     break;
-    //     case 'aboutMe active':
-    //       ABOUT.style.display = 'block';
-    //       HOME.style.display = 'none';
-    //       PROJECTS.style.display = 'none';
-    //       SKILLS.style.display = 'none';
-    //       CERTIFICATES.style.display = 'none';
-    //     break;
-    //     case 'projects active':
-    //       ABOUT.style.display = 'none';
-    //       HOME.style.display = 'none';
-    //       PROJECTS.style.display = 'block';
-    //       SKILLS.style.display = 'none';
-    //       CERTIFICATES.style.display = 'none';
-    //     break;
-    //     case 'skills active':
-    //       ABOUT.style.display = 'none';
-    //       HOME.style.display = 'none';
-    //       PROJECTS.style.display = 'none';
-    //       SKILLS.style.display = 'block';
-    //       CERTIFICATES.style.display = 'none';
-    //     break;
-    //     default:
-    //       ABOUT.style.display = 'none';
-    //       HOME.style.display = 'none';
-    //       PROJECTS.style.display = 'none';
-    //       SKILLS.style.display = 'none';
-    //       CERTIFICATES.style.display = 'block';
-    //     break;
-    //   }
-
     // ANIMACION TRANSICION
     setTimeout(function(){
       contentTransicion.style.display = 'flex';
@@ -1212,6 +1261,80 @@
   }
 });
 
+// SECTION ABOUT
+
+const contactos = document.querySelectorAll('.contacto');
+const forma3 = document.querySelector('.forma3');
+const forma2 = document.querySelector('.forma2');
+const formaContacto = document.querySelectorAll('.forma-contacto');
+const formaContactoSegundo = document.querySelectorAll('.forma-contacto-segundo');
+
+// imprimir la segunda clase de formaContacto y la segunda clase de contactos
+contactos.forEach(function(elemento) {
+          elemento.addEventListener('mouseover', function(event) {
+            // hago a todos blancos
+            formaContacto.forEach(function(forma) {
+              forma.style.background = 'white';
+            });
+            formaContactoSegundo.forEach(function(forma){
+              forma.style.background = 'white';
+            })
+            // convierto las clases de contacto y forma en objetos para compararlos 
+            // y al seleccionar al elemento que paso por el mouse se agrega los estilos
+            let objetoContactos =  elemento.className.split(' ');
+            formaContacto.forEach(function(forma) {
+              let objetoFormaContacto = forma.className.split(' ');
+              if(objetoContactos[1] === objetoFormaContacto[1]){
+                forma.style.background = '#2696E8';
+                forma.style.transition = '1s';
+                event.target.style.animation = 'girar 1s 1';
+                setTimeout(function() {
+                  event.target.style.animation = 'none';
+                }, 1000);
+              }
+            });
+            //  ahora lo mismo con el segundo elemento de forma
+            formaContactoSegundo.forEach(function(forma){
+              let objetoContactoSegundo = forma.className.split(' ');
+              if(objetoContactos[1] === objetoContactoSegundo[1]){
+                forma.style.background = '#b02eae';
+                forma.style.transition = '1s';
+              }
+            })
+
+          });
+        });
+// let clases = formaContacto[i].className.split(' ')
+// console.log(formaContacto[i])
+
+// let clases = e.className.split(' ');
+// console.log()
+// formaContacto.style.background = 'red';
+
+// contactos.forEach((e) => {
+//   e.onmouseover = () => {
+//     setTimeout(function(){
+//       formaContacto.forEach(function(e){
+//         e.style.background = 'rgb(107, 26, 97)';
+//         e.style.transition = '1s';
+//       })
+//       formaContactoSegundo.forEach(function(e){
+//         e.style.background = 'rgb(41, 75, 126)';
+//         e.style.transition = '1s';
+//       })
+//     }, 10)
+//     setTimeout(function(){
+//       formaContacto.forEach(function(e){
+//         e.style.background = 'white';
+//         e.style.transition = '1s';
+//       })
+//       formaContactoSegundo.forEach(function(e){
+//         e.style.background = 'white';
+//         e.style.transition = '1s';
+//       })
+//     }, 10000)
+//   }
+// })
 
 
 
