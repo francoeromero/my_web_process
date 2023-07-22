@@ -202,9 +202,9 @@
     }
     .transicion{
       background-color: #090909;
-      background-image: linear-gradient(-300deg, #172d54 0%, #5e1b5e 94%);
-      border-top: 5rem solid rgba(38, 150, 232, 0.1);
-      border-right: 5rem solid rgba(223, 44, 217, 0.1);
+      background-image: linear-gradient(-300deg, #172d54 0%, #000000 84%);
+      border-top: 5rem solid rgba(18, 21, 23, 0.1);
+      border-right: 5rem solid rgba(37, 32, 37, 0.1);
       border-radius: 50% 50% 50% 50% / 40% 40% 50% 80%;
       transform: skew(10deg, 30deg), rotate(-350deg);
       z-index: 9;
@@ -701,7 +701,33 @@
       border-radius: 50%;
       top: 12rem;
       left: 15rem;
-      animation: foto 6s infinite linear;
+      animation: forma1 12s infinite linear;
+      opacity: 0.05;
+      z-index: 6;
+    }
+    .forma3{
+      width: 17rem;
+      height: 17rem;
+      background: rgb(107, 26, 97);
+      position: absolute;
+      border-radius: 50%;
+      top: 12rem;
+      left: 15rem;
+      animation: forma3 15s infinite linear;
+      opacity: 0.2;
+      z-index: 7;
+    }
+    .forma2{
+      width: 17rem;
+      height: 17rem;
+      background: rgb(41, 75, 126);
+      position: absolute;
+      border-radius: 50%;
+      top: 12rem;
+      left: 15rem;
+      animation: forma2 11s infinite linear;
+      opacity: 0.6;
+      z-index: 7;
     }
     .foto{
       width: 15rem;
@@ -710,44 +736,74 @@
       left: 15rem;
       position: absolute;
       border-radius: 50%;
+      z-index: 8;
     }
-    @keyframes foto {
-
+    @keyframes forma1 {
       0% {
-                border-radius: 20% 40% 60% 20%;
-                transform: skew(0deg, 0deg);
+          border-radius: 20% 40% 60% 20%;
+          transform: skew(0deg, 0deg) rotate(0deg);
+      }
+      25% {
+          border-radius: 70% 10% 30% 50%;
+          transform: skew(10deg, 20deg) rotate(90deg);
+      }
+      50% {
+        border-radius: 30% 50% 20% 40%;
+        transform: skew(-20deg, 5deg) rotate(180deg);
+      }
+      75% {
+          border-radius: 50% 20% 70% 10%;
+          transform: skew(15deg, -10deg) rotate(270deg);
+        }
+      100% {
+          border-radius: 20% 40% 60% 20%;
+          transform: skew(0deg, 0deg) rotate(360deg);
+        }
+      }
+    @keyframes forma2 {
+      0% {
+          border-radius: 30% 20% 70% 10%;
+          transform: skew(0deg, 0deg) rotate(0deg);
+        }
+      25% {
+          border-radius: 40% 50% 30% 60%;
+          transform: skew(20deg, -10deg) rotate(90deg);
+        }
+      50% {
+          border-radius: 10% 40% 50% 20%;
+          transform: skew(5deg, 15deg) rotate(180deg);
+      }
+      75% {
+          border-radius: 60% 30% 20% 50%;
+          transform: skew(-15deg, 10deg) rotate(270deg);
+        }
+      100% {
+          border-radius: 30% 20% 70% 10%;
+          transform: skew(0deg, 0deg) rotate(360deg);
+        }
+    }
+
+    @keyframes forma3 {
+      0% {
+                border-radius: 10% 70% 20% 30%;
+                transform: skew(0deg, 0deg) rotate(0deg);
             }
             25% {
-                border-radius: 70% 10% 30% 50%;
-                transform: skew(10deg, 20deg);
+                border-radius: 50% 30% 40% 20%;
+                transform: skew(10deg, 20deg) rotate(90deg);
             }
             50% {
-                border-radius: 30% 50% 20% 40%;
-                transform: skew(-20deg, 5deg);
+                border-radius: 20% 50% 10% 40%;
+                transform: skew(-5deg, 25deg) rotate(180deg);
             }
             75% {
-                border-radius: 50% 20% 70% 10%;
-                transform: skew(15deg, -10deg);
+                border-radius: 40% 20% 60% 30%;
+                transform: skew(-20deg, 10deg) rotate(270deg);
             }
             100% {
-                border-radius: 20% 40% 60% 20%;
-                transform: skew(0deg, 0deg);
+                border-radius: 10% 70% 20% 30%;
+                transform: skew(0deg, 0deg) rotate(360deg);
             }
-
-
-      /* 0%, 100%{ */
-        /* background: transparent; */
-        /* box-shadow: none; */
-        /* border: 2px solid white; */
-      /* } */
-      /* 50%{ */
-        /* border: 2px solid black; */
-        /* background: #1d496b; */
-        /* box-shadow: 0 0 20px rgba(38, 150, 232, 0.2),
-        0 0 60px rgba(38, 150, 232, 0.2),
-        0 0 100px rgba(38, 150, 232, 0.2); */
-        /* opacity: 0.2; */
-      /* } */
     }
 
     </style>
@@ -813,6 +869,8 @@
     <section class="section-about" id="about">
       <h1 class="texto1">SOBRE MI</h1>
       <p class="textoAbout">Arquitecto orientado en tecnología con 4 años de experiencia en diversos proyectos enfocados en la planificación y proyección de diseños funcionales, estructurales y eficientes en la resolución de problemas. Busco constantemente nuevos desafíos para seguir creciendo profesionalmente.</p>
+      <div class="forma3"></div>
+      <div class="forma2"></div>
       <div class="forma"></div>
       <img class="foto" src="./img/000000000.jpg" alt="">
     </section>
