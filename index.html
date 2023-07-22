@@ -694,7 +694,6 @@
       width: 50rem;
     }
     .forma{
-      display: none;
       width: 17rem;
       height: 17rem;
       background: white;
@@ -704,20 +703,21 @@
       top: 12rem;
       left: 15rem;
       animation: forma1 12s infinite linear;
-      opacity: 0.05;
+      opacity: 0.5;
       z-index: 6;
     }
     .forma3{
       width: 17rem;
       height: 17rem;
-      background: rgb(107, 26, 97);
-      border: 2px solid white;
+      /* background: rgb(107, 26, 97); */
+      background: white;
+      /* border: 2px solid white; */
       position: absolute;
       border-radius: 50%;
       top: 12rem;
       left: 15rem;
       animation: forma3 15s infinite linear;
-      opacity: 0.1;
+      opacity: 0.01;
       z-index: 7;
     }
     .forma2{
@@ -748,7 +748,7 @@
           transform: skew(0deg, 0deg) rotate(0deg);
       }
       25% {
-          border-radius: 70% 10% 30% 50%;
+          border-radius: 70% 40% 30% 50%;
           transform: skew(10deg, 20deg) rotate(90deg);
       }
       50% {
@@ -1275,6 +1275,7 @@ contactos.forEach(function(elemento) {
             // hago a todos blancos
             formaContacto.forEach(function(forma) {
               forma.style.background = 'white';
+              forma.style.boxShadow = 'none';
             });
             formaContactoSegundo.forEach(function(forma){
               forma.style.background = 'white';
@@ -1286,6 +1287,7 @@ contactos.forEach(function(elemento) {
               let objetoFormaContacto = forma.className.split(' ');
               if(objetoContactos[1] === objetoFormaContacto[1]){
                 forma.style.background = '#2696E8';
+                forma.style.boxShadow = '0 0 20px rgba(38, 150, 232, 0.8),0 0 60px rgba(38, 150, 232, 0.8),0 0 100px rgba(38, 150, 232, 0.8)';
                 forma.style.transition = '1s';
                 event.target.style.animation = 'girar 1s 1';
                 setTimeout(function() {
