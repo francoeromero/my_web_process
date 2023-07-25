@@ -45,6 +45,7 @@
     }
 /* FIN CONFIG GLOBAL */
 /*///////// SECTION HOME ////////// */
+
     .texto1,
     .texto2,
     .texto3{
@@ -503,136 +504,7 @@
     } 
 
 
-    /* RESPONSIVO */
-    @media (max-width: 1500px){
-      /* HOME END */
-      .content-transicion{
-        align-items: flex-start;
-        justify-content: flex-end;
-      }
-      .texto1,.texto2,.texto3{
-        font-size: 2.5rem;
-      }
-      .texto4{
-        font-size: 1.5rem;
-        top: 16rem;
-      }
-      .texto5{
-        font-size: 1.2rem;
-        top: 18rem;
-      }
-      .boton{
-        top: 20rem;
-      }
-      .home,
-      .aboutMe,
-      .projects,
-      .skills,
-      .certificates{
-        transition: 1s;
-        left: 1.5rem;
-      }
-      .home{
-      top: 10rem;
-      }
-      .aboutMe{
-        top: 15rem;
-      }
-      .projects{
-        top: 20rem;
-      }
-      .skills{
-        top: 25rem;
-      }
-      .certificates{
-        top: 30rem;
-      }
-      /* HOME END */
-    }
-    @media (max-width: 800px){
-      /* HOME */
-      .content-transicion{
-        align-items: flex-start;
-        justify-content: flex-end;
-      }
-      .texto1,.texto2,.texto3{
-        font-size: 1.5rem;
-      }
-      .texto4{
-        font-size: 1.2rem;
-        top: 15rem;
-      }
-      .texto5{
-        font-size: 1.2rem;
-        top: 17rem;
-      }
-      /* HOME END */
-      /* ABOUT */
-      .content-contacto,
-      .content-formas-contacto,
-      .content-formas-contacto-segundo{
-        border: 2px solid red;
-      }
-      .forma-contacto-segundo,
-      .forma-contacto,
-      .contacto{
-        scale: 0.5;
-      }
-
-      .foto,
-      .forma,
-      .forma2,
-      .forma3{
-        scale: 0.6;
-      }
-      .textoAbout{
-        text-align: center;
-      }
-      .tituloAbout{
-        right: 16rem;
-      }
-
-      .section-about{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-      }
-
-
-      /* ABOUT END */
-    }
-
-    @media (max-width: 600px){
-      /* HOME */
-      .content-transicion{
-        align-items: flex-start;
-        justify-content: flex-end;
-      }
-      .texto1,.texto2,.texto3{
-        font-size: 1.2rem;
-        text-align: center;
-      }
-
-      .texto4{
-        font-size: 1rem;
-        text-align: center;
-        top: 16rem;
-        left: 10rem;
-      }
-      .texto5{
-        text-align: center;
-        font-size: 1rem;
-        top: 18rem;
-        left: 8rem;
-      }
-      .boton{
-        top: 22rem;
-        scale: 0.8;
-      }
-      /* HOME END */
-    }
-
+    
     .content-logoAnimado{
       display: none;
       width: 100%;
@@ -667,7 +539,7 @@
         bottom: 15rem;
       }
     }
-
+    
     .cascoAnimado{
       animation: cascoAnimado 2s 1;
       z-index: 12;
@@ -764,7 +636,7 @@
     .textoAbout{
       top: 10rem;
       left: 3rem;
-  }
+    }
     .foto{
       width: 15rem;
       height: 15rem;
@@ -800,28 +672,152 @@
       margin-right: 4rem;
       cursor: pointer;
     }
-/*
-    .textoAbout{
-        top: 12rem;
-        left: 30rem;
-        margin: 5rem;
-        color: #c1c1c1;
-        position: absolute;
-        font-family: sans-serif;
+    /* RESPONSIVO */
+    @media (max-width: 1500px){
+      /* HOME END */
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 2.5rem;
+      }
+      .texto4{
         font-size: 1.5rem;
-        font-style: italic;
-        width: 50rem;
+        top: 16rem;
+      }
+      .texto5{
+        font-size: 1.2rem;
+        top: 18rem;
+      }
+      .boton{
+        top: 20rem;
+      }
+      .home,
+      .aboutMe,
+      .projects,
+      .skills,
+      .certificates{
+        transition: 1s;
+        left: 1.5rem;
+      }
+      .home{
+      top: 10rem;
+      }
+      .aboutMe{
+        top: 15rem;
+      }
+      .projects{
+        top: 20rem;
+      }
+      .skills{
+        top: 25rem;
+      }
+      .certificates{
+        top: 30rem;
+      }
+      /* HOME END */
     }
-    .forma{
-      width: 17rem;
-      height: 17rem;
-      background: white;
-      border: 2px solid gray;
-      position: absolute;
-      border-radius: 50%;
-      top: 12rem;
-      left: 15rem;
-      animation: forma1 50s infinite linear;
+    @media (max-width: 800px){
+      /* HOME */
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 1.5rem;
+      }
+      .texto4{
+        font-size: 1.2rem;
+        top: 15rem;
+      }
+      .texto5{
+        font-size: 1.2rem;
+        top: 17rem;
+      }
+      /* HOME END */
+      /* ABOUT */
+      .content-description {
+        flex-direction: column;
+      }
+      .tituloAbout{
+        bottom: 2rem;
+      }
+      .textoAbout {
+        font-size: 0.9rem;
+        width: 18rem;
+        text-align: center;
+      }
+      .foto{
+        margin: 0;
+        margin-bottom: 1.2rem;
+      }
+      .content-contacto{
+        top: 35rem;
+      }
+      .linkedin,
+      .github,
+      .email,
+      .phone{
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    
+      /* ABOUT END */
+    }
+    
+    @media (max-width: 600px){
+      /* HOME */
+      .content-transicion{
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .texto1,.texto2,.texto3{
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    
+      .texto4{
+        font-size: 1rem;
+        text-align: center;
+        top: 16rem;
+        left: 10rem;
+      }
+      .texto5{
+        text-align: center;
+        font-size: 1rem;
+        top: 18rem;
+        left: 8rem;
+      }
+      .boton{
+        top: 22rem;
+        scale: 0.8;
+      }
+      /* HOME END */
+    }
+    /*
+.textoAbout{
+  top: 12rem;
+  left: 30rem;
+  margin: 5rem;
+  color: #c1c1c1;
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+        width: 50rem;
+      }
+      .forma{
+        width: 17rem;
+        height: 17rem;
+        background: white;
+        border: 2px solid gray;
+        position: absolute;
+        border-radius: 50%;
+        top: 12rem;
+        left: 15rem;
+        animation: forma1 50s infinite linear;
       opacity: 0.5;
       z-index: 6;
     }
