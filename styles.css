@@ -103,7 +103,9 @@
       font-family: 'Turret Road', cursive;
 
     }
-
+    :root{
+      --bordeBoton: linear-gradient(to right, tomato 0%, gold 100%);
+    }
     .boton{
         display: flex;
         align-items: center;
@@ -554,7 +556,7 @@
         justify-content: flex-end;
       }
       .texto1,.texto2,.texto3{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
       .texto4{
         font-size: 1.2rem;
@@ -608,19 +610,25 @@
         justify-content: flex-end;
       }
       .texto1,.texto2,.texto3{
-        font-size: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
       }
 
       .texto4{
-        font-size: 1.2rem;
-        top: 20rem;
+        font-size: 1rem;
+        text-align: center;
+        top: 16rem;
+        left: 10rem;
       }
       .texto5{
-        font-size: 1.2rem;
-        top: 23rem;
+        text-align: center;
+        font-size: 1rem;
+        top: 18rem;
+        left: 8rem;
       }
       .boton{
-        top: 28rem;
+        top: 22rem;
+        scale: 0.8;
       }
       /* HOME END */
     }
