@@ -633,9 +633,6 @@
       /* HOME END */
     }
 
-
-
-
     .content-logoAnimado{
       display: none;
       width: 100%;
@@ -717,10 +714,93 @@
     /* /////////////// */
     
     /* /////// SECTION ABOUT ME //////// */
-    .section-about h1{
-        left: 30rem;
+    #about{
+      width: 100%;
+      display: flex;
+      border: 4px solid red;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-top: 15rem;
     }
-
+    .content-description{
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 12rem;
+      justify-content: center;
+      align-items: center;
+      border: 4px solid blue;
+    }
+    .content-tituloAbout{
+      display: flex;
+      border: 5px solid brown;
+      position: absolute;
+      top: 10rem;
+      width: 100%;
+      height: 5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-contacto{
+      width: 100%;
+      height: 10rem;
+      border: 4px solid green;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+    }
+    .tituloAbout{
+      color: rgb(173, 173, 173);
+      margin: 5rem;
+      position: absolute;
+      font-family: 'Zen Tokyo Zoo', cursive;
+      font-size: 3rem;
+      font-style: italic;
+      text-align: center;
+    }
+    .textoAbout{
+      top: 10rem;
+      left: 3rem;
+  }
+    .foto{
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      margin-right: 7rem;
+      position: relative;
+      z-index: 8;
+    }
+    .foto::before{
+      content: ' ';
+      position: absolute;
+      width: 50rem;
+      height: 50rem;
+      background: wheat;
+      z-index: 7;
+    }
+    .textoAbout{
+      width: 40rem;
+      color: white;
+      font-family: sans-serif;
+      font-size: 1.2rem;
+    }
+    .linkedin,
+    .github,
+    .email,
+    .phone{
+      width: 3rem;
+      height: 3rem;
+    }
+    .contacto{
+      width: 4rem;
+      height: 4rem;
+      margin-right: 4rem;
+      cursor: pointer;
+    }
+/*
     .textoAbout{
         top: 12rem;
         left: 30rem;
@@ -748,9 +828,7 @@
     .forma3{
       width: 17rem;
       height: 17rem;
-      /* background: rgb(107, 26, 97); */
       background: white;
-      /* border: 2px solid white; */
       position: absolute;
       border-radius: 50%;
       top: 12rem;
@@ -781,6 +859,83 @@
       border-radius: 50%;
       z-index: 8;
     }
+
+        /* contacto */
+        /* .content-contacto{
+          position: absolute;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          top: 35rem;
+          width: 100%;
+          z-index: 6;
+        }
+        .contacto{
+          width: 4rem;
+          height: 4rem;
+          margin-right: 4rem;
+          cursor: pointer;
+        }
+    
+        .content-formas-contacto{
+          position: absolute;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          top: 35rem;
+          width: 100%;
+          z-index: 5;
+        }
+        .forma-contacto{
+          width: 4rem;
+          height: 4rem;
+          background: white;
+          border-radius: 50%;
+          margin-right: 4rem;
+          border: 2px solid white;
+          animation: forma2 11s infinite linear;
+          opacity: 0.2;
+        }
+        .content-formas-contacto-segundo{
+          position: absolute;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          top: 35rem;
+          width: 100%;
+          z-index: 5;
+        }
+        .forma-contacto-segundo{
+          width: 4rem;
+          height: 4rem;
+          background: white;
+          border-radius: 50%;
+          margin-right: 4rem;
+          border: 2px solid white;
+          animation: forma1 13s infinite linear;
+          opacity: 0.1;
+        }
+        
+        .content-description{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          height: 10rem;
+          position: relative;
+        }
+         */
+         
+        
+        
+@keyframes girar{
+      from{
+        transform: rotate(360deg);
+      }
+      to{
+        transform: rotate(-360deg);
+        }
+      }
     @keyframes forma1 {
       0% {
           border-radius: 20% 40% 60% 20%;
@@ -850,76 +1005,4 @@
     }
 
 
-        /* contacto */
-        .content-contacto{
-            position: absolute;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            top: 35rem;
-            width: 100%;
-            z-index: 6;
-          }
-          .contacto{
-            width: 4rem;
-            height: 4rem;
-            margin-right: 4rem;
-            cursor: pointer;
-          }
-      
-          .content-formas-contacto{
-            position: absolute;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            top: 35rem;
-            width: 100%;
-            z-index: 5;
-          }
-          .forma-contacto{
-            width: 4rem;
-            height: 4rem;
-            background: white;
-            border-radius: 50%;
-            margin-right: 4rem;
-            border: 2px solid white;
-            animation: forma2 11s infinite linear;
-            opacity: 0.2;
-          }
-          .content-formas-contacto-segundo{
-            position: absolute;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            top: 35rem;
-            width: 100%;
-            z-index: 5;
-          }
-          .forma-contacto-segundo{
-            width: 4rem;
-            height: 4rem;
-            background: white;
-            border-radius: 50%;
-            margin-right: 4rem;
-            border: 2px solid white;
-            animation: forma1 13s infinite linear;
-            opacity: 0.1;
-          }
-          @keyframes girar{
-            from{
-              transform: rotate(360deg);
-            }
-            to{
-              transform: rotate(-360deg);
-            }
-          }
-      
-          .content-description{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            width: 100%;
-            height: 10rem;
-            position: relative;
-          }
       
