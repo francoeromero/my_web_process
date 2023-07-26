@@ -591,7 +591,6 @@
       width: 100%;
       display: flex;
       height: 50vh;
-      border: 4px solid red;
       justify-content: center;
       align-items: center;
       position: relative;
@@ -605,12 +604,10 @@
       height: 12rem;
       justify-content: center;
       align-items: center;
-      border: 4px solid blue;
     }
     /* contenedor del titulo */
     .content-tituloAbout{
       display: flex;
-      border: 5px solid brown;
       position: absolute;
       top: 10rem;
       width: 100%;
@@ -622,7 +619,6 @@
     .content-contacto{
       width: 100%;
       height: 10rem;
-      border: 4px solid green;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -633,7 +629,6 @@
     .content-formas-contacto{
       width: 100%;
       height: 10rem;
-      border: 4px solid rgb(91, 25, 184);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -664,14 +659,16 @@
       font-family: sans-serif;
       font-size: 1.2rem;
     }
+
     /* la foto */
     .foto{
       width: 15rem;
       height: 15rem;
       border-radius: 50%;
-      margin-right: 7rem;
+      margin-right: 5rem;
       position: relative;
       z-index: 8;
+      border: 2px solid white;
     }
 
     /* los iconos */
