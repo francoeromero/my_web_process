@@ -893,14 +893,14 @@
       /* width: 120px;
       height: 80px; */
       scale: 2.1;
-      transform: rotate(360deg);
+      transform: rotate(390deg);
       opacity: 0.7;
 
     }
     .forma-projects:hover::before{
       right: -1rem;
       top: -1rem;
-      transform: rotate(400deg);
+      transform: rotate(560deg);
       opacity: 0.7;
     }
 
@@ -949,19 +949,19 @@
     /* GITHUB */
     .elemento2 i{
       transform: skewX(10deg);
-      color: #000000;
+      color: #0f0f0f;
     }
     .elemento2 i:hover{
       transform: skewX(10deg);
+      color: rgb(0, 0, 0);
       scale: 2.2;
-      color: white;
       transition: 0.8s;
       /* animation: girar 0.5s 1; */
     }
     .elemento3{
       width: 50px;
       height: 50px;
-      background: #242424;
+      background: #0f0f0f;
       margin: 5px;
       position: absolute;
       font-family: sans-serif;
@@ -971,7 +971,7 @@
       border-radius: 10px;
     }
     .elemento3:hover{
-      background: rgb(8, 8, 8);
+      background: rgb(0, 0, 0);
       /* border: 1px solid white; */
       transition: 0.5s;
     }
