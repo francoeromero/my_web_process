@@ -682,21 +682,146 @@
       margin-right: 4rem;
 
     }
+    /* los redondos detras */
     .forma-contacto{
       opacity: 0.8;
       border-radius: 50%;
       padding: 0.5rem;
     }
-
-
-
-
     /* clase en comun con todos los iconos */
     .contacto{
       width: 4rem;
       height: 4rem;
       cursor: pointer;
     }
+    @keyframes girar{
+      from{
+        transform: rotate(360deg);
+      }
+      to{
+        transform: rotate(-360deg);
+        }
+      }
+    @keyframes forma1 {
+      0% {
+          border-radius: 20% 40% 60% 20%;
+          transform: skew(0deg, 0deg) rotate(0deg);
+      }
+      25% {
+          border-radius: 70% 40% 30% 50%;
+          transform: skew(10deg, 20deg) rotate(90deg);
+      }
+      50% {
+        border-radius: 30% 50% 20% 40%;
+        transform: skew(-20deg, 5deg) rotate(180deg);
+      }
+      75% {
+          border-radius: 50% 20% 70% 10%;
+          transform: skew(15deg, -10deg) rotate(270deg);
+        }
+      100% {
+          border-radius: 20% 40% 60% 20%;
+          transform: skew(0deg, 0deg) rotate(360deg);
+        }
+      }
+    @keyframes forma2 {
+      0% {
+          border-radius: 30% 20% 70% 10%;
+          transform: skew(0deg, 0deg) rotate(0deg);
+        }
+      25% {
+          border-radius: 40% 50% 30% 60%;
+          transform: skew(20deg, -10deg) rotate(90deg);
+        }
+      50% {
+          border-radius: 10% 40% 50% 20%;
+          transform: skew(5deg, 15deg) rotate(180deg);
+      }
+      75% {
+          border-radius: 60% 30% 20% 50%;
+          transform: skew(-15deg, 10deg) rotate(270deg);
+        }
+      100% {
+          border-radius: 30% 20% 70% 10%;
+          transform: skew(0deg, 0deg) rotate(360deg);
+        }
+    }
+
+    @keyframes forma3 {
+      0% {
+                border-radius: 10% 70% 20% 30%;
+                transform: skew(0deg, 0deg) rotate(0deg);
+            }
+            25% {
+                border-radius: 50% 30% 40% 20%;
+                transform: skew(10deg, 20deg) rotate(90deg);
+            }
+            50% {
+                border-radius: 20% 50% 10% 40%;
+                transform: skew(-5deg, 25deg) rotate(180deg);
+            }
+            75% {
+                border-radius: 40% 20% 60% 30%;
+                transform: skew(-20deg, 10deg) rotate(270deg);
+            }
+            100% {
+                border-radius: 10% 70% 20% 30%;
+                transform: skew(0deg, 0deg) rotate(360deg);
+            }
+    }
+
+    /* ABOUT FIN */
+
+/* ///////////////////////////// */
+    /* PROJECTS */
+    #projects{
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .tituloProjects{
+      color: rgb(173, 173, 173);
+      width: 105%;
+      font-family: 'Zen Tokyo Zoo', cursive;
+      font-size: 3rem;
+      font-style: italic;
+      text-align: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      top: 10rem;
+      position: absolute;
+    }
+    
+
+    .content-projects{
+      width:100%;
+      display: grid;
+      grid-template-columns: repeat(4, 200px); 
+      gap: 20px; 
+      justify-content: center;
+      position: absolute;
+      top: 15rem;
+    }
+    .forma-projects{
+      width: 200px; 
+      border-radius: 1rem;
+      height: 200px;
+      background-color: #eaeaea; 
+      border: 5px solid #8c1717; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px; 
+      transform: skewX(-10deg);
+      cursor: pointer;
+    }
+
+/* ////////////////////////// */
     /* RESPONSIVO */
     @media (max-width: 1500px){
       /* HOME END */
@@ -826,209 +951,8 @@
       }
       /* HOME END */
     }
-    /*
-.textoAbout{
-  top: 12rem;
-  left: 30rem;
-  margin: 5rem;
-  color: #c1c1c1;
-  position: absolute;
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  font-style: italic;
-        width: 50rem;
-      }
-      .forma{
-        width: 17rem;
-        height: 17rem;
-        background: white;
-        border: 2px solid gray;
-        position: absolute;
-        border-radius: 50%;
-        top: 12rem;
-        left: 15rem;
-        animation: forma1 50s infinite linear;
-      opacity: 0.5;
-      z-index: 6;
-    }
-    .forma3{
-      width: 17rem;
-      height: 17rem;
-      background: white;
-      position: absolute;
-      border-radius: 50%;
-      top: 12rem;
-      left: 15rem;
-      animation: forma3 15s infinite linear;
-      opacity: 0.01;
-      z-index: 7;
-    }
-    .forma2{
-      width: 17rem;
-      height: 17rem;
-      background: rgb(41, 75, 126);
-      border: 2px solid white;
-      position: absolute;
-      border-radius: 50%;
-      top: 12rem;
-      left: 15rem;
-      animation: forma2 11s infinite linear;
-      opacity: 0.1;
-      z-index: 7;
-    }
-    .foto{
-      width: 15rem;
-      height: 15rem;
-      top: 12rem;
-      left: 15rem;
-      position: absolute;
-      border-radius: 50%;
-      z-index: 8;
-    }
+ 
 
-        /* contacto */
-        /* .content-contacto{
-          position: absolute;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          top: 35rem;
-          width: 100%;
-          z-index: 6;
-        }
-        .contacto{
-          width: 4rem;
-          height: 4rem;
-          margin-right: 4rem;
-          cursor: pointer;
-        }
-    
-        .content-formas-contacto{
-          position: absolute;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          top: 35rem;
-          width: 100%;
-          z-index: 5;
-        }
-        .forma-contacto{
-          width: 4rem;
-          height: 4rem;
-          background: white;
-          border-radius: 50%;
-          margin-right: 4rem;
-          border: 2px solid white;
-          animation: forma2 11s infinite linear;
-          opacity: 0.2;
-        }
-        .content-formas-contacto-segundo{
-          position: absolute;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          top: 35rem;
-          width: 100%;
-          z-index: 5;
-        }
-        .forma-contacto-segundo{
-          width: 4rem;
-          height: 4rem;
-          background: white;
-          border-radius: 50%;
-          margin-right: 4rem;
-          border: 2px solid white;
-          animation: forma1 13s infinite linear;
-          opacity: 0.1;
-        }
         
-        .content-description{
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          width: 100%;
-          height: 10rem;
-          position: relative;
-        }
-         */
-         
-        
-        
-@keyframes girar{
-      from{
-        transform: rotate(360deg);
-      }
-      to{
-        transform: rotate(-360deg);
-        }
-      }
-    @keyframes forma1 {
-      0% {
-          border-radius: 20% 40% 60% 20%;
-          transform: skew(0deg, 0deg) rotate(0deg);
-      }
-      25% {
-          border-radius: 70% 40% 30% 50%;
-          transform: skew(10deg, 20deg) rotate(90deg);
-      }
-      50% {
-        border-radius: 30% 50% 20% 40%;
-        transform: skew(-20deg, 5deg) rotate(180deg);
-      }
-      75% {
-          border-radius: 50% 20% 70% 10%;
-          transform: skew(15deg, -10deg) rotate(270deg);
-        }
-      100% {
-          border-radius: 20% 40% 60% 20%;
-          transform: skew(0deg, 0deg) rotate(360deg);
-        }
-      }
-    @keyframes forma2 {
-      0% {
-          border-radius: 30% 20% 70% 10%;
-          transform: skew(0deg, 0deg) rotate(0deg);
-        }
-      25% {
-          border-radius: 40% 50% 30% 60%;
-          transform: skew(20deg, -10deg) rotate(90deg);
-        }
-      50% {
-          border-radius: 10% 40% 50% 20%;
-          transform: skew(5deg, 15deg) rotate(180deg);
-      }
-      75% {
-          border-radius: 60% 30% 20% 50%;
-          transform: skew(-15deg, 10deg) rotate(270deg);
-        }
-      100% {
-          border-radius: 30% 20% 70% 10%;
-          transform: skew(0deg, 0deg) rotate(360deg);
-        }
-    }
-
-    @keyframes forma3 {
-      0% {
-                border-radius: 10% 70% 20% 30%;
-                transform: skew(0deg, 0deg) rotate(0deg);
-            }
-            25% {
-                border-radius: 50% 30% 40% 20%;
-                transform: skew(10deg, 20deg) rotate(90deg);
-            }
-            50% {
-                border-radius: 20% 50% 10% 40%;
-                transform: skew(-5deg, 25deg) rotate(180deg);
-            }
-            75% {
-                border-radius: 40% 20% 60% 30%;
-                transform: skew(-20deg, 10deg) rotate(270deg);
-            }
-            100% {
-                border-radius: 10% 70% 20% 30%;
-                transform: skew(0deg, 0deg) rotate(360deg);
-            }
-    }
-
 
       
