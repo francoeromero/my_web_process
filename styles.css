@@ -845,41 +845,51 @@
     .forma-projects::after{
       content: '';
       position: absolute;
-      width: 200px;
-      height: 100px;
+      width: 100px;
+      height: 80px;
       background: rgb(91, 91, 91);
       border-radius: 50%;
       opacity: 1;
-      left: 12rem;
-      bottom: 8rem;
+      left: 1rem;
+      bottom: 2rem;
       z-index: 9;
-      transition: all 0.3s ease;
+      transform: rotate(140deg);
     }
     .forma-projects::before{
       content: '';
       position: absolute;
-      width: 200px;
-      height: 100px;
+      width: 100px;
+      height: 80px;
       background: rgb(113, 113, 113);
       border-radius: 50%;
       opacity: 1;
-      right: 8rem;
-      top: 10rem;
+      right: 2rem;
+      top: 2rem;
       transform: rotate(40deg);
       z-index: 9;
-      transition: all 1s ease;
     }
+    .forma-projects::before,
+    .forma-projects::after{
+      transition: all 1s ease;
+      opacity: 0.1;
+    }
+    /* animacion hover pseudoelementos */
     .forma-projects:hover::after{
       left: 1rem;
-      bottom: 5rem;
-      width: 120px;
-      height: 80px;
+      bottom: 1rem;
+      /* width: 120px;
+      height: 80px; */
+      scale: 2.1;
       transform: rotate(360deg);
+      opacity: 0.5;
+
     }
     .forma-projects:hover::before{
-      right: -2rem;
-      top: 2rem;
+      right: -1rem;
+      top: -1rem;
       transform: rotate(400deg);
+      opacity: 0.5;
+
     }
 
 /* ////////////////////////// */
