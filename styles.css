@@ -844,7 +844,7 @@
     }
     .forma-projects:hover{
       background-color: #000000;
-      background-image: linear-gradient(147deg, #314c5f 0%, #1728448a 74%);
+      background-image: linear-gradient(147deg, #466174 0%, #1728448a 74%);
       box-shadow: 0 0 20px rgba(38, 150, 232, 0.1),
       0 0 60px rgba(38, 150, 232, 0.1),
       0 0 100px rgba(38, 150, 232, 0.1);
@@ -1034,10 +1034,10 @@
 .grid-skills{
   display: grid;
   grid-template-columns: repeat(4,200px);
-  /* border: 2px solid green; */
   gap: 10px;
   position: absolute;
   top: 15rem;
+  width: 100%;
 }
 .skl{
   width: 120px;
@@ -1052,6 +1052,9 @@
   overflow: hidden;
   border-radius: 20%;
 }
+.skl img{
+  border-radius: 10px;
+}
 .textIcono{
   font-size: 1rem;
   color: white;
@@ -1062,7 +1065,30 @@
   width: 80px;
   height: 80px;
 }
-
+.titleDesignSkills{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+  color: white;
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+}
+.prueba{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 32rem;
+}
+.grid-design-skills{
+  display: grid;
+  grid-template-columns: repeat(4,200px);
+  gap: 10px;
+  margin-left: 40px;
+}
 /* ////////////////////////// */
     /* RESPONSIVO */
     @media (max-width: 1500px){
@@ -1112,6 +1138,16 @@
       /* PROJECTS */
       .content-projects{
         grid-template-columns: repeat(3, 200px);
+      }
+      /* SKILLS */
+      .prueba{
+        top: 40rem;
+      }
+      .grid-design-skills{
+        grid-template-columns: repeat(3,200px);
+      }
+      .grid-skills{
+        grid-template-columns: repeat(3,200px);
       }
     }
     @media (max-width: 900px){
@@ -1168,6 +1204,16 @@
       .content-projects{
         grid-template-columns: repeat(2, 200px);
       }
+      /* SKILLS */
+      .prueba{
+        top: 50rem;
+      }
+      .grid-design-skills{
+        grid-template-columns: repeat(2,200px);
+      }
+      .grid-skills{
+        grid-template-columns: repeat(2,200px);
+      }
     }
     
     @media (max-width: 600px){
@@ -1210,6 +1256,16 @@
       }
       .elemento5 img{
         transform: skewX(0deg);
+      }
+      /* SKILLS */
+      .prueba{
+        top: 90rem;
+      }
+      .grid-design-skills{
+        grid-template-columns: repeat(1,200px);
+      }
+      .grid-skills{
+        grid-template-columns: repeat(1,200px);
       }
     }
  

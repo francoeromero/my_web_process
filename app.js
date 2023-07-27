@@ -239,7 +239,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'none';
         SKILLS.style.display = 'block';
         CERTIFICATES.style.display = 'none';
-        cursor.style.display = 'block';
+        cursor.style.display = 'none';
       break;
       default:
         ABOUT.style.display = 'none';
