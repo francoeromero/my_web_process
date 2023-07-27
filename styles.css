@@ -343,6 +343,7 @@
       font-size: 0.7rem;
       font-family: sans-serif;
       bottom: 1rem;
+      z-index: 9;
     }
     .copyright::after{
       content: '';
@@ -837,10 +838,16 @@
       cursor: pointer;
       overflow: hidden;
       z-index: 8;
+      opacity: 0.95;
     }
     .forma-projects:hover{
       background-color: #000000;
       background-image: linear-gradient(147deg, #314c5f 0%, #1728448a 74%);
+      box-shadow: 0 0 20px rgba(38, 150, 232, 0.1),
+      0 0 60px rgba(38, 150, 232, 0.1),
+      0 0 100px rgba(38, 150, 232, 0.1);
+      border: 3px solid rgba(38, 150, 232, 1);
+      transition: 1s;
     }
     .forma-projects::after{
       content: '';
@@ -870,7 +877,7 @@
     }
     .forma-projects::before,
     .forma-projects::after{
-      transition: all 1s ease;
+      transition: all 0.8s ease;
       opacity: 0.1;
     }
     /* animacion hover pseudoelementos */
@@ -889,7 +896,13 @@
       top: -1rem;
       transform: rotate(400deg);
       opacity: 0.5;
-
+    }
+    .pruebaa{
+      width: 100px;
+      height: 100px;
+      background: white;
+      position: absolute;
+      z-index: 10;
     }
 
 /* ////////////////////////// */
