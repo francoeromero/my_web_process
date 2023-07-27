@@ -143,13 +143,15 @@
 
 
     // CURSOR MOUSE
-    document.addEventListener('mousemove', (e) => {
-        let x = e.pageX;
-        let y = e.pageY;
+    function posicionMouse(e){
+      let x = e.pageX;
+      let y = e.pageY;
 
-        cursor.style.top = y + 'px';
-        cursor.style.left = x + 'px';
-    })
+      cursor.style.top = y + 'px';
+      cursor.style.left = x + 'px';
+    }
+    
+    document.addEventListener('mousemove', posicionMouse)
 
     // MI NOMBRE EFECTO 
       texto1.onmouseover = () => {
@@ -213,6 +215,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'none';
         SKILLS.style.display = 'none';
         CERTIFICATES.style.display = 'none';
+        cursor.style.display = 'block';
       break;
       case 'aboutMe active':
         ABOUT.style.display = 'block';
@@ -220,6 +223,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'none';
         SKILLS.style.display = 'none';
         CERTIFICATES.style.display = 'none';
+        cursor.style.display = 'block';
       break;
       case 'projects active':
         ABOUT.style.display = 'none';
@@ -227,6 +231,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'block';
         SKILLS.style.display = 'none';
         CERTIFICATES.style.display = 'none';
+        cursor.style.display = 'none';
       break;
       case 'skills active':
         ABOUT.style.display = 'none';
@@ -234,6 +239,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'none';
         SKILLS.style.display = 'block';
         CERTIFICATES.style.display = 'none';
+        cursor.style.display = 'block';
       break;
       default:
         ABOUT.style.display = 'none';
@@ -241,6 +247,7 @@ circulos.forEach(function(elemento, index) {
         PROJECTS.style.display = 'none';
         SKILLS.style.display = 'none';
         CERTIFICATES.style.display = 'block';
+        cursor.style.display = 'block';
       break;
     }
   },1200)
