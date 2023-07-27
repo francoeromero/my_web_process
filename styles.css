@@ -824,6 +824,12 @@
     }
     /* El elemento del grid repetido */
     .forma-projects{
+      /* display: grid;
+      column-gap: 100px; */
+      /* grid-template-columns: repeat(2, 100px);
+      grid-template-rows: repeat(5, 100px); */
+      position: relative;
+      justify-content: center;
       width: 250px; 
       border-radius: 1rem;
       height: 200px;
@@ -846,7 +852,7 @@
       box-shadow: 0 0 20px rgba(38, 150, 232, 0.1),
       0 0 60px rgba(38, 150, 232, 0.1),
       0 0 100px rgba(38, 150, 232, 0.1);
-      border: 3px solid rgba(38, 150, 232, 1);
+      border: 3px solid rgb(108, 188, 254);
       transition: 1s;
     }
     .forma-projects::after{
@@ -888,22 +894,124 @@
       height: 80px; */
       scale: 2.1;
       transform: rotate(360deg);
-      opacity: 0.5;
+      opacity: 0.7;
 
     }
     .forma-projects:hover::before{
       right: -1rem;
       top: -1rem;
       transform: rotate(400deg);
-      opacity: 0.5;
+      opacity: 0.7;
     }
-    .pruebaa{
+
+    .elemento2,
+    .elemento3,
+    .elemento4,
+    .elemento5{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+/* CONTENEDOR TITULO DEL PROYECTO */
+    .elemento1{
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 50px;
+      background: transparent;
+      margin: 5px;
+      position: absolute;
+      color: white;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      border-radius: 10px;
+    }
+    /* el titulo del proyecto */
+    .elemento1 p {
+      font-family: 'Zen Tokyo Zoo', cursive;
+      font-size: 2rem;
+      font-weight: bold;
+      transform: skewX(-10deg);
+    }
+/* CONTENEDOR CODE GITHUB */
+    .elemento2{
+      width: 50px;
+      height: 50px;
+      /* background: rgb(156, 62, 62); */
+      position: absolute;
+      margin: 5px;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      border-radius: 10px;
+    }
+    /* GITHUB */
+    .elemento2 i{
+      transform: skewX(10deg);
+      color: #000000;
+    }
+    .elemento2 i:hover{
+      transform: skewX(10deg);
+      scale: 2.2;
+      color: white;
+      transition: 0.8s;
+      /* animation: girar 0.5s 1; */
+    }
+    .elemento3{
+      width: 50px;
+      height: 50px;
+      background: #242424;
+      margin: 5px;
+      position: absolute;
+      font-family: sans-serif;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      border-radius: 10px;
+    }
+    .elemento3:hover{
+      background: rgb(8, 8, 8);
+      /* border: 1px solid white; */
+      transition: 0.5s;
+    }
+    .elemento4{
+      width: 170px;
+      height: 35px;
+      background: rgb(26, 26, 26);
+      margin: 5px;
+      position: absolute;
+      font-family: sans-serif;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      border-radius: 10px;
+    }
+    .tech{
+      width: 30px;
+      height: 30px;
+    }
+    .elemento4:hover{
+      transition: 0.5s;
+    }
+    .elemento5{
+      width: 120px;
+      height: 100px;
+      /* background: rgb(9, 22, 118); */
+      margin: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      border-radius: 10px;
+    }
+    .p1{
       width: 100px;
       height: 100px;
-      background: white;
-      position: absolute;
-      z-index: 10;
+      transform: skewX(10deg);
     }
+
 
 /* ////////////////////////// */
     /* RESPONSIVO */
