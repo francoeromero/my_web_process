@@ -810,18 +810,20 @@
       position: absolute;
     }
     
-
+    /* contenedor GRID */
     .content-projects{
       width:100%;
       display: grid;
       grid-template-columns: repeat(4, 200px); 
-      gap: 20px; 
+      gap: 70px;
+      row-gap: 10px; 
       justify-content: center;
       position: absolute;
       top: 17rem;
     }
+    /* El elemento del grid repetido */
     .forma-projects{
-      width: 200px; 
+      width: 250px; 
       border-radius: 1rem;
       height: 200px;
       background-color: #000000;
@@ -834,6 +836,50 @@
       transform: skewX(-10deg);
       cursor: pointer;
       overflow: hidden;
+      z-index: 8;
+    }
+    .forma-projects:hover{
+      background-color: #000000;
+      background-image: linear-gradient(147deg, #314c5f 0%, #1728448a 74%);
+    }
+    .forma-projects::after{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background: rgb(91, 91, 91);
+      border-radius: 50%;
+      opacity: 1;
+      left: 12rem;
+      bottom: 8rem;
+      z-index: 9;
+      transition: all 0.3s ease;
+    }
+    .forma-projects::before{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background: rgb(113, 113, 113);
+      border-radius: 50%;
+      opacity: 1;
+      right: 8rem;
+      top: 10rem;
+      transform: rotate(40deg);
+      z-index: 9;
+      transition: all 1s ease;
+    }
+    .forma-projects:hover::after{
+      left: 1rem;
+      bottom: 5rem;
+      width: 120px;
+      height: 80px;
+      transform: rotate(360deg);
+    }
+    .forma-projects:hover::before{
+      right: -2rem;
+      top: 2rem;
+      transform: rotate(400deg);
     }
 
 /* ////////////////////////// */
