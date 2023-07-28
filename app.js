@@ -69,45 +69,6 @@
               texto5_parpadeo.style.left = '40.3rem';  
       }, 12000)
     })
-    // LOGO CLICK
-    // casco.addEventListener('click', function(){
-    //   casco.style.animation = 'prueba 1s 1'
-    //   engranaje.style.animation = 'prueba 1s 1'
-    // })
-
-
-    // let engranaje = document.getElementById('engranaje');
-    // let casco = document.getElementById('casco');
-    // e.style.animation = 'prueba 1s';
-
-
-  //   logo.addEventListener('click', function(){
-  //     const engranaje = document.getElementById('engranaje');
-  //     const logo = document.querySelector('.content-logo')
-
-
-  // contentLogo.style.animation = 'prueba 1s infinite';
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 0.5s infinite linear'
-  //     // },10)
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 0.1s infinite linear'
-  //     // },100)
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 1s infinite linear'
-  //     // },1000)
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 1.1s infinite linear'
-  //     // },1100)
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 1.2s infinite linear'
-  //     // },1200)
-  //     // setTimeout(function(){
-  //     //   engranaje.style.animation = 'engranaje 2s infinite linear'
-  //     // },5000)
-
-  //   })
-
 
 
 
@@ -364,4 +325,27 @@ contactos.forEach(function(elemento) {
 //   }
 // })
 
+const linkedin = document.querySelector('.linkedin');
+const github = document.querySelector('.github');
+const email = document.querySelector('.email');
+const phone = document.querySelector('.phone');
 
+
+linkedin.addEventListener('click', function(e){
+  e.preventDefault();
+  window.open('https://www.linkedin.com/in/francoeromero/', '_blank');
+});
+
+github.addEventListener('click', function(e){
+  e.preventDefault();
+  window.open('https://github.com/francoeromero', '_blank');
+});
+
+email.addEventListener('click', function(e){
+  e.preventDefault();
+  window.open('mailto:francoeromero@gmail.com?subject=contacto&body=Hola%2C%20te%20contacto%20desde%20tu%20p%C3%A1gina%20y%20%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20ti%20y%20tu%20trabajo.%20', '_blank');
+});
+phone.addEventListener('click', function(e){
+  e.preventDefault();
+  window.open('http://wa.link/d80sr2');
+});
