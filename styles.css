@@ -47,6 +47,7 @@
 /*///////// SECTION HOME ////////// */
 
     .circulo1{
+      display: none;
       width: 350px;
       height: 350px;
       background: white;
@@ -62,6 +63,7 @@
       animation: forma2 12s infinite linear;
     }
     .circulo2{
+      display: none;
       width: 350px;
       height: 350px;
       background: white;
@@ -94,28 +96,28 @@
 
     @keyframes forma1 {
       0% {
-          border-radius: 30% 40% 60% 30%;
+          border-radius: 50% 40% 60% 40%;
           transform: skew(0deg, 0deg) rotate(0deg);
           bottom: 15rem;
           right: 10rem;
           scale: 0.3;
       }
       25% {
-          border-radius: 70% 40% 30% 50%;
+          border-radius: 70% 40% 40% 50%;
           transform: skew(10deg, 20deg) rotate(90deg);
         }
         50% {
-          border-radius: 30% 50% 30% 40%;
+          border-radius: 40% 50% 40% 40%;
           transform: skew(-20deg, 5deg) rotate(180deg);
           bottom: 10rem;
           right: 5rem;
       }
       75% {
-          border-radius: 50% 30% 70% 20%;
+          border-radius: 50% 40% 70% 40%;
           transform: skew(15deg, -10deg) rotate(270deg);
         }
       100% {
-          border-radius: 30% 40% 60% 40%;
+          border-radius: 50% 40% 60% 40%;
           transform: skew(0deg, 0deg) rotate(360deg);
           bottom: 5rem;
           right: 2rem;
@@ -124,29 +126,29 @@
       }
     @keyframes forma2 {
       0% {
-          border-radius: 30% 20% 70% 30%;
+          border-radius: 40% 40% 70% 50%;
           transform: skew(0deg, 0deg) rotate(0deg);
           scale: 0.2;
           right: 0;
           bottom: 0;
         }
       25% {
-          border-radius: 40% 50% 30% 60%;
+          border-radius: 50% 50% 40% 60%;
           transform: skew(20deg, -10deg) rotate(90deg);
         }
       50% {
-          border-radius: 30% 40% 50% 30%;
+          border-radius: 50% 40% 50% 40%;
           transform: skew(5deg, 15deg) rotate(180deg);
           /* scale: 1.1; */
           right: 5rem;
           bottom: -5rem;
       }
       75% {
-          border-radius: 60% 30% 30% 50%;
+          border-radius: 60% 50% 40% 50%;
           transform: skew(-15deg, 10deg) rotate(270deg);
         }
       100% {
-          border-radius: 30% 30% 70% 30%;
+          border-radius: 40% 40% 70% 50%;
           transform: skew(0deg, 0deg) rotate(360deg);
           scale: 0.4;
           right: 15rem;
@@ -1170,6 +1172,15 @@ margin-right: auto; */
   grid-template-columns: repeat(4,200px);
   gap: 10px;
   margin-left: 40px;
+}
+/* ///////////////////////// */
+/* CERTIFICADOS */
+.content-certificates{
+  width: 100%;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 /* ////////////////////////// */
     /* RESPONSIVO */
