@@ -11,6 +11,18 @@
         top: 0;
         z-index: -1;
     }
+    .ciudad {
+      position: absolute;
+      width: 50rem;
+      height: 40rem;
+      bottom: 0;
+      right:  0;
+      z-index: 0;
+      filter: saturate(.5);
+      /* opacity: 0.4; */
+    }
+    
+
 
     /* .section-home,
     .section-about,
